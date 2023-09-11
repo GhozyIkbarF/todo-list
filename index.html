@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <!-- <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script> -->
+    <link
+      rel="stylesheet"
+      href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"
+    />
+    <link rel="stylesheet" href="/resources/demos/style.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <h1>Todo List</h1>
+        <p id="dateTime"></p>
+      </nav>
+    </header>
+    <main>
+      <form id="form-create-todo">
+        <label for="task">Task</label>
+        <input type="text" name="task" required />
+        <label for="date">Date</label>
+        <input type="date" id="date-input" name="date" required />
+        <input type="submit" value="Create" />
+      </form>
+      <form id="search-wrapper">
+        <label for="search-task">Search</label>
+        <input
+          type="text"
+          id="search-task"
+          name="search-task"
+          placeholder="search task"
+        />
+      </form>
+      <div class="result-wrapper">
+        <div>
+          <h2>belum dikerjakan</h2>
+          <div class="todo-uncomplete"></div>
+        </div>
+        <div>
+          <h2>sudah dikerjakan</h2>
+          <div class="todo-complete"></div>
+        </div>
+      </div>
+    </main>
+    <div id='modal' class="modal">
+      <div class="modal-wrapper">
+        <button id="btn-close-modal">X</button>
+        <form id="input-modal" class="input-modal">
+          <input type="text" name="task" required>
+          <input type="date" name="date" id="date-input" required>
+          <input type="submit" value="Relaod Task">
+        </form>
+      </div>
+    </div>
+    <!-- <footer></footer> -->
+    <script src="./script.js"></script>
+  </body>
+</html>

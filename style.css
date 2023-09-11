@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+:root {
+    --step--2: clamp(0.61rem, calc(0.54rem + 0.33vw), 0.80rem);
+    --step--1: clamp(0.73rem, calc(0.64rem + 0.47vw), 1.00rem);
+    --step-0: clamp(0.88rem, calc(0.74rem + 0.65vw), 1.25rem);
+    --step-1: clamp(1.05rem, calc(0.87rem + 0.89vw), 1.56rem);
+    --step-2: clamp(1.26rem, calc(1.02rem + 1.21vw), 1.95rem);
+    --step-3: clamp(1.51rem, calc(1.19rem + 1.62vw), 2.44rem);
+    --step-4: clamp(1.81rem, calc(1.38rem + 2.15vw), 3.05rem);
+    --step-5: clamp(2.18rem, calc(1.61rem + 2.85vw), 3.82rem);
+
+    --gradien-color: linear-gradient(90deg, rgba(170,82,241,1) 0%, rgba(223,75,255,1) 0%, rgba(168,64,252,1) 100%, rgba(187,77,255,1) 100%);
+  }
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+body{
+    font-family: 'Inter';
+    font-weight: 100 900;
+    background-color: rgb(17, 17, 17);
+    color: #fff;
+}
+
+button{
+    cursor: pointer;
+}
+nav {
+    padding-left: 10%;
+}
+nav h1, .result-wrapper h2 {
+    background: var(--gradien-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    background-clip: text;
+}
+nav h1 {
+    font-size: var(--step-3);
+    width: fit-content;
+}
+form {
+    width: 50%;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    row-gap: 5px;
+    background-color: rgb(37, 37, 37);
+}
+
+#form-create-todo{
+    margin-bottom: 20px;
+    padding: 20px;
+}
+#search-wrapper {
+    padding: 20px;
+}
+
+input[type=text], input[id=date-input] {
+    /* width: 100%; */
+    font-family: Raleway, sans-serif;
+    background: transparent;
+    border: 2px solid;
+    color: #fff;
+    border-radius: 8px;
+    padding: 14px;
+    box-sizing: border-box;
+    margin-bottom: 8px;
+    font-size: var(--step-1);
+}
+
+input[type="submit"] {
+    width: max(5rem, 15dvw);
+    margin: 0 auto;
+    font-size: var(--step-0);
+    padding: 10px;
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.5s;
+}
+input[type="submit"]:hover {
+    transform: scale(1.1);
+}
+
+.result-wrapper {
+    width: 55%;
+    margin: 0 auto;
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 
+        repeat(
+            auto-fit,
+            minmax(
+                min(20rem, 100%), 1fr
+            )
+        );
+}
+
+.result-wrapper button{
+    width: max(60px, 6dvw);
+    padding: 5px;
+    border-radius: 5px;
+}
+.result-wrapper h2{
+    width: fit-content;
+    margin: 10px auto;
+    font-size: var(--step-2);
+}
+
+/* .todo-uncomplete, .todo-complete {} */
+
+
+.task-wrappper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    border-radius: 12px;
+    border: 0.5px solid #fff;
+    padding: 5px 15px;
+    transition: transform 0.4s;
+}
+.task-wrappper:hover{
+    transform: scale(1.04);
+}
+.task {
+    width: 80%;
+}
+.task p{
+    font-size: var(--step--1);
+}
+.actions {
+    text-align: end;
+}
+
+.modal{
+    position: fixed;
+    z-index: 100;
+    background-color: rgb(0, 0, 0, 0.8);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /* display: flex; */
+    display: none;
+    align-items: center;
+    /* text-align: end; */
+}
+.modal-wrapper {
+    margin: auto;
+    width: max(290px, 50%);
+    background-color: rgb(37, 37, 37);
+    padding: 10px;
+    border-radius: 12px;
+    text-align: end;
+}
+
+.input-modal {
+    width: 90%;
+    padding: 10px;
+}
+.input-modal input[type="submit"] {
+    width: max(8rem, 15dvw);
+}
+#btn-close-modal {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    border: none;
+}
+
+/* Small screens (mobile phones) */
+@media (max-width: 767px) {
+    form, .search-task, .result-wrapper{
+        width: 80%;
+    }
+     
+    input[type=text], input[type=date] {
+        padding: 10px;
+    }
+  }
+  
+
